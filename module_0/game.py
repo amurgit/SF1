@@ -5,14 +5,20 @@ def game_core_v2(number):
     '''Сначала устанавливаем любое random число, а потом уменьшаем или увеличиваем его в зависимости от того, больше оно или меньше нужного.
        Функция принимает загаданное число и возвращает число попыток'''
     count = 1
-
     predict = np.random.randint(1,101)
+    left = 0
+    right = 100
     while number != predict:
         count+=1
+
         if number > predict: 
-            predict += 1
+            left = predict
+            predict += int((right - left)/2) or 1
+
         elif number < predict: 
-            predict -= 1
+            right = predict
+            predict -= int((right - left)/2) or 1
+
     return(count) # выход из цикла, если угадали
 
 
