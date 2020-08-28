@@ -6,7 +6,7 @@ def game_core_v2(number):
        Функция принимает загаданное число и возвращает число попыток'''
     count = 1
     predict = np.random.randint(1,101)
-    left = 0
+    left = 1
     right = 100
     while number != predict:
         count+=1
